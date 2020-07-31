@@ -5,9 +5,9 @@ LDFLAGS = -L/usr/local/lib
 PROGRAM = onamae_ddns
 
 $(PROGRAM) : ddns.o
-  gcc -o $(PROGRAM) ddns.o
+	gcc -o $(PROGRAM) ddns.o
 ddns.o : ddns.cpp
-  gcc -c ddns.cpp
+	gcc -c ddns.cpp
 install : $(PROGRAM)
 	install -s $(PROGRAM) $(DEST)
 clean : 
