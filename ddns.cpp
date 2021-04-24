@@ -7,7 +7,7 @@ int main(){
  FILE *file;
  char buffer[128];
  char *pcmd;
- strcpy(buffer,"curl ifconfig.io > /tmp/gbip.buff");
+ strcpy(buffer,"curl ifconfig.io -4 > /tmp/gbip.buff");
  pcmd=(char*)buffer;
  system(pcmd);
  file=fopen("/tmp/gbip.buff","r");
