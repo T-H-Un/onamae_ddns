@@ -18,7 +18,7 @@ int main(){
  sleep(1);
  fprintf(file,"LOGIN\nUSERID:12345678\nPASSWORD:Pass1234\n.\n");
  sleep(1);
- fprintf(file,"MODIP\nHOSTNAME:hostname\nDOMNAME:sample.com\nIPV4:%s\n.\n",buffer);
+ fprintf(file,"MODIP\nHOSTNAME:hostname\nDOMNAME:example.com\nIPV4:%s\n.\n",buffer);
  sleep(1);
  fprintf(file,"LOGOUT\n.\n");
  pclose(file);
