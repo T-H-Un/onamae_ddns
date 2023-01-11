@@ -2,6 +2,11 @@
 #include <unistd.h>
 #include <string.h>
 
+const char* USER_ID= "xxxxxxxx";
+const char* PASS= "Pass1234";
+const char* HOSTNAME="hostname";
+const char* DOMNAME="example.com";
+
 int main(){
  FILE *file;
  char buffer[128];
@@ -16,9 +21,9 @@ int main(){
  buffer[strlen(buffer)-1]='\0';
  file=popen("openssl s_client -connect ddnsclient.onamae.com:65010 -quiet","w");
  sleep(1);
- fprintf(file,"LOGIN\nUSERID:12345678\nPASSWORD:Pass1234\n.\n");
+ fprintf(file,"LOGIN\nUSERID:%s\nPASSWORD:%s\n.\n",USER_ID,PASS);
  sleep(1);
- fprintf(file,"MODIP\nHOSTNAME:hostname\nDOMNAME:example.com\nIPV4:%s\n.\n",buffer);
+ fprintf(file,"MODIP\nHOSTNAME:%s\nDOMNAME:%s\nIPV4:%s\n.\n",HOSTNAME,DOMNAME,buffer);
  sleep(1);
  fprintf(file,"LOGOUT\n.\n");
  pclose(file);
